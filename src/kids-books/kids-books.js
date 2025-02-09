@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const checkboxes = document.querySelectorAll(".filter input[type='checkbox']")
   const priceRange = document.getElementById('priceRange')
   const priceValue = document.getElementById('priceValue')
+  const clearAllButton = document.getElementById('clearAllFilters')
 
   let cartData = JSON.parse(localStorage.getItem('cartData')) || {} // Load stored cart data
 
@@ -50,7 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
       itemCountElement.classList.add('item-count')
       button.prepend(itemCountElement)
     }
-    itemCountElement.textContent = `${count} ($${(count * price).toFixed(2)})` // Show price next to the count
+    itemCountElement.textContent =
+      count > 0 ? `${count} ($${(count * price).toFixed(2)})` : ''
   }
 
   // Initial setup: Load stored counts and prices
@@ -139,8 +141,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Event listener for price range
   priceRange.addEventListener('input', function () {
-    console.log('Price range changed:', priceRange.value)
     priceValue.textContent = priceRange.value
     filterProducts()
+  })
+
+  clearAllButton.addEventListener('click', function () {
+    checkboxes.forEach((checkbox) => (checkbox.checked = false))
+    priceRange.value = priceRange.max // Reset price
+    priceValue.textContent = priceRange.max
+    filterProducts()
+  })
+  document.querySelectorAll('.remove-item').forEach((removeBtn) => {
+    removeBtn.addEventListener('click', function (event) {
+      event.stopPropagation() // Prevent triggering add-to-cart
+      const button = this.closest('.add-to-cart-btn')
+      const productName = button
+        .closest('.product')
+        .querySelector('h3')
+        .textContent.trim()
+
+      if (cartData[productName] && cartData[productName].count > 0) {
+        cartData[productName].count--
+        if (cartData[productName].count === 0) delete cartData[productName]
+        localStorage.setItem('cartData', JSON.stringify(cartData))
+        updateItemCount(
+          button,
+          cartData[productName]?.count || 0,
+          cartData[productName]?.price || 0
+        )
+        updateCartCount()
+      }
+    })
   })
 })

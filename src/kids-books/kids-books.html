@@ -8,7 +8,7 @@
       rel="stylesheet"
     />
     <title>Kids Bookstore</title>
-    <link rel="stylesheet" href="/./main.css" />
+    <link rel="stylesheet" href="/main.css" />
     <link href="../styles/kids-books.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -16,7 +16,7 @@
       <h1>Kids Books</h1>
       <div class="navbar">
         <a href="/index.html" class="active">Home</a>
-        <a href="./src/kids-books/kids-books.html">Kids Books</a>
+        <a href="#">Kids Books</a>
         <a href="#">Toy News</a>
         <a href="#" class="right">Contact</a>
         <div class="cart-container">
@@ -28,6 +28,7 @@
     <main>
       <aside class="filter">
         <h2>Filter</h2>
+        <button id="clearAllFilters">Clear All</button>
         <h3>Brand</h3>
         <ul>
           <li>
@@ -80,7 +81,8 @@
           </p>
           <button class="add-to-cart-btn">
             <span class="item-count">0</span>
-            <i class="fa fa-shopping-cart"></i> Add to Cart
+            <i class="fa fa-minus remove-item"></i>
+            <i class="fa fa-shopping-cart"></i> +
           </button>
         </div>
 
