@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "name": "Cocomelon Time To Get All Clean Bath Book",
+      "image": "//www.toyworld.co.nz/cdn/shop/files/9780655224990_result_1024x1024.jpg?v=1732148530",
+      "alt": "Cocomelon Bath Book",
+      "old_price": "$29.99",
+      "new_price": "$23.99",
+      "sale": true
+    },
+    {
+      "name": "THE GREAT KIWI COLOURING BOOK",
+      "image": "//www.toyworld.co.nz/cdn/shop/files/The_Great_Kiwi_Colouring_Book_1_1024x1024.jpg?v=1732089502",
+      "alt": "Kiwi Colouring Book",
+      "old_price": "$9.99",
+      "new_price": "$5.99",
+      "sale": true
+    },
+    {
+      "name": "Hape Babys Farm Animal Book",
+      "image": "//www.toyworld.co.nz/cdn/shop/files/Capture_qsunlx_1024x1024.png?v=1732499644",
+      "alt": "Farm Animal Book",
+      "old_price": "$20.99",
+      "new_price": "$23.99",
+      "sale": true
+    },
+    {
+      "name": "THE NOT-SO-PERFECT PENGUIN PICTURE BOOK",
+      "image": "//www.toyworld.co.nz/cdn/shop/files/9781781711347_0638f656-b112-4ec4-addd-d1e2aab3833c_1024x1024.jpg?v=1732098695",
+      "alt": "Penguin Picture Book",
+      "old_price": "$9.99",
+      "new_price": "$11.99",
+      "sale": true
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Cart - Kids Bookstore</title>
+    <link rel="stylesheet" href="../styles/cart.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Your Cart</h1>
+      <div class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="./kids-books/kids-books.html">Kids Books</a>
+        <a href="#">Toy News</a>
+        <a href="#">Contact</a>
+      </div>
+    </header>
+    <main>
+      <section class="cart-items">
+        <h2>Your Cart Items</h2>
+        <div id="cart-list"></div>
+      </section>
+      <section class="cart-summary">
+        <h3>Cart Summary</h3>
+        <p>Total Price: $<span id="total-price">0.00</span></p>
+        <button id="checkout-btn">Checkout</button>
+      </section>
+    </main>
+    <script src="cart.js"></script>
+  </body>
+</html>
