@@ -13,13 +13,13 @@ function handlePayment(event) {
   const expiryDate = document.getElementById('expiryDate').value
   const cvv = document.getElementById('cvv').value
 
-  // Basic validation (you would normally want more robust validation)
+  // Basic validation
   if (cardNumber === '' || expiryDate === '' || cvv === '') {
     showError('Please fill in all the fields.')
     return
   }
 
-  // Simulate a successful payment process (in a real-world app, you'd call a payment API here)
+  // Simulate a successful payment process (in a real-world app, call a payment API here)
   processPayment(cardNumber, expiryDate, cvv)
 }
 
@@ -27,7 +27,7 @@ function handlePayment(event) {
 function processPayment(cardNumber, expiryDate, cvv) {
   // Simulate a delay for payment processing
   setTimeout(function () {
-    // Normally you would use a payment gateway API here (Stripe, PayPal, etc.)
+    // Normally  use a payment gateway API here (Stripe, PayPal, etc.), need modifications if you integrate gateway
     document.getElementById('confirmation').innerHTML =
       '<p>Payment Successful! Thank you for your purchase.</p>'
     document.getElementById('confirmation').classList.remove('error')
