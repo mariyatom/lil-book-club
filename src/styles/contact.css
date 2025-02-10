@@ -5,7 +5,7 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
-  margin: 0 20%;
+  margin: 0 30%;
 }
 
 label {
@@ -31,7 +31,7 @@ textarea {
 button {
   margin-top: 15px;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #333333;
   color: white;
   border: none;
   border-radius: 5px;
@@ -40,7 +40,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #333333;
 }
 
 .contact-info {

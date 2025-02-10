@@ -79,7 +79,7 @@ body {
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
   background-color: white;
-  padding: 20px;
+  padding: 1% 3% 3% 10%;
 }
 
 /* Fake image, just for this example */
