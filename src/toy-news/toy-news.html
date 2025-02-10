@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Toy News - Lil Book Club</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../main.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/toy-news.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>LIL BOOK CLUB</h1>
+      <p><b>Latest</b> Toy News</p>
+    </div>
+
+    <div class="navbar">
+      <a href="../../index.html">Home</a>
+      <a href="../kids-books/kids-books.html">Kids Books</a>
+      <a href="#" class="active">Toy News</a>
+      <a href="#">Contact</a>
+      <div class="cart-container">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="side">
+        <h2>Trending Toys</h2>
+        <div class="fakeimg" style="height: 200px">Toy 1</div>
+        <br />
+        <div class="fakeimg" style="height: 200px">Toy 2</div>
+      </div>
+      <div class="main">
+        <h2>Latest Toy News</h2>
+        <div id="toy-news-container">
+          <!-- News articles will be loaded here dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>©2025 LilBookClub. All Rights Reserved</p>
+    </div>
+
+    <script src="./src/toy-news.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+#toy-news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.toy-article {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.toy-article img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.toy-article h3 {
+  margin-top: 10px;
+}
+
+.toy-article p {
+  font-size: 14px;
+  color: #555;
+}
