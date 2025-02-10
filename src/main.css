@@ -105,6 +105,7 @@ img.offer-image {
   color: #fdc800;
   margin: 6px;
   float: right;
+  cursor: pointer;
 }
 #cart-count {
   position: absolute;

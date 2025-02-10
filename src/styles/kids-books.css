@@ -127,6 +127,8 @@ main {
   font-size: 16px;
   font-weight: bold;
   padding: 5px 5px;
+  margin-left: 21%;
+  margin-top: 5%;
   border: none;
   border-radius: 5px;
   cursor: pointer;

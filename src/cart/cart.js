@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
   checkoutBtn.addEventListener('click', function () {
     if (Object.values(cartData).some((item) => item.count > 0)) {
       alert('Proceeding to checkout...')
-      window.location.href = '/src/payment/payment.html'
+      window.location.href = '../payment/payment.html'
     } else {
       alert('Your cart is empty. Add items to the cart first.')
     }
