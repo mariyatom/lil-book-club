@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       button.prepend(itemCountElement)
     }
     itemCountElement.textContent =
-      count > 0 ? `${count} ($${(count * price).toFixed(2)})` : ''
+      count > 0 ? `${count} ($${(count * price).toFixed(2)})` : '0'
   }
 
   // Initial setup: Load stored counts and prices

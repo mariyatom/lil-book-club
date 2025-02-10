@@ -149,7 +149,7 @@ main {
 }
 .item-count {
   position: absolute;
-  top: -8px; /* Move above the button */
+  top: -58%; /* Move above the button */
   right: -16%; /* Adjust for alignment */
   background-color: red;
   color: white;
