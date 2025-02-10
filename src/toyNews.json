@@ -1,0 +1,23 @@
+[
+  {
+    "title": "New LEGO Sets this August!",
+    "date": "Feb 10, 2025",
+    "image": "../assets/toy1.png",
+    "description": "This August, LEGO fans can look forward to an exciting wave of new sets, packed with creativity and fun!",
+    "fullContent": "Attention, LEGO fans! This August, an exciting lineup of new LEGO sets is arriving, including creative builds and exclusive editions. Look out for themed sets from Harry Potter, Star Wars, and Marvel. These will be available worldwide, with pre-orders kicking off next week. Plus, don’t miss the special Halloween-themed LEGO set!"
+  },
+  {
+    "title": "New LEGO Sets this July!",
+    "date": "Feb 9, 2024",
+    "image": "../assets/toy2.png",
+    "description": "LEGO fans have something extraordinary to look forward to this July! LEGO is launching a series of fantastic new sets.",
+    "fullContent": "LEGO's July collection includes innovative and nostalgic sets. Among them, you’ll find exciting Technic models and some classic franchise sets, such as Star Wars and Ninjago. Get ready to build and display your new LEGO creations!"
+  },
+  {
+    "title": "New LEGO Sets this October!",
+    "date": "Feb 10, 2025",
+    "image": "../assets/toy3.png",
+    "description": "Discover the exciting new LEGO sets launching in October! Celebrate the release of brand-new LEGO sets this summer.",
+    "fullContent": "July brings a variety of new LEGO sets, ranging from intricate architecture models to fun playsets for kids. Whether you’re a collector or just starting out, there’s something for everyone in this exciting launch!"
+  }
+]
