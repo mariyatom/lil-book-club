@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       button.prepend(itemCountElement)
     }
     itemCountElement.textContent =
-      count > 0 ? `${count} ($${(count * price).toFixed(2)})` : '0'
+      count > 0 ? `${count} ($${(count * price).toFixed(2)})` : 0
   }
 
   // Initial setup: Load stored counts and prices
@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add click event listener
     button.addEventListener('click', function () {
+      if (!cartData[productName]) {
+        cartData[productName] = { count: 0, price: productPrice } // Initialize if undefined
+      }
       cartData[productName].count++
       localStorage.setItem('cartData', JSON.stringify(cartData)) // Store in localStorage
       updateItemCount(button, cartData[productName].count, productPrice)

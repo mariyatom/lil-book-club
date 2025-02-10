@@ -151,7 +151,7 @@ main {
   position: absolute;
   top: -58%; /* Move above the button */
   right: -16%; /* Adjust for alignment */
-  background-color: red;
+  background-color: #fdc800;
   color: white;
   font-size: 12px;
   font-weight: bold;
