@@ -9,5 +9,13 @@ It includes a home page, a kids' books page with filters, an add-to-cart functio
 
 #### Resources
 
-[ToyWorld](https://www.toyworld.co.nz/)
+[ToyWorld](https://www.toyworld.co.nz/)\
 [www.w3schools.com](https://www.w3schools.com/howto/howto_css_example_website.asp)
+
+## lil-book-club!
+Let's get started.
+
+Run the project by fork and clone the repository then 
+use `npx vite` command.
+
+Change the urls of pages, if its not working in your computer to the appropriate path.
