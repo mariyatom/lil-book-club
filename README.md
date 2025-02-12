@@ -19,3 +19,14 @@ Run the project by fork and clone the repository then
 use `npx vite` command.
 
 Change the urls of pages, if its not working in your computer to the appropriate path.
+
+## Kids-books
+Here's the HTML structure for your kids' books page, including pagination, sorting, and filtering.
+
+Features:
+✅ Product Listing
+✅ Sorting Dropdown (Sort by Price, Name, etc.)
+✅ Items Per Page Dropdown
+✅ Pagination Controls
+✅ Filters (Brand, Age, Price Range)
+✅ Cart Count Display

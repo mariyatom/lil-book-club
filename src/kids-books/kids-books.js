@@ -6,8 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const priceRange = document.getElementById('priceRange')
   const priceValue = document.getElementById('priceValue')
   const clearAllButton = document.getElementById('clearAllFilters')
+  const paginationContainer = document.getElementById('pagination')
+  const itemsPerPageSelect = document.getElementById('itemsPerPage')
 
   let cartData = JSON.parse(localStorage.getItem('cartData')) || {} // Load stored cart data
+  let currentPage = 1
+  let itemsPerPage = parseInt(itemsPerPageSelect.value)
 
   const cartContainer = document.querySelector('.cart-container')
   // Set the total cart count in header
@@ -89,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Function to filter products
   function filterProducts() {
-    console.log('Filtering products...')
     const selectedBrands = Array.from(
       document.querySelectorAll("input[name='brand']:checked")
     ).map((cb) => cb.value)
@@ -102,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Selected ages:', selectedAges)
     console.log('Max price selected:', maxPrice)
 
-    products.forEach((product) => {
+    let filteredProducts = Array.from(products).filter((product) => {
       const brand = product.getAttribute('data-brand')
       const age = product.getAttribute('data-age')
       const price = parseFloat(product.getAttribute('data-price'))
@@ -113,15 +116,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }, Brand: ${brand}, Age: ${age}, Price: ${price}`
       )
 
-      // Check brand and age filters
       const brandMatch =
         selectedBrands.length === 0 || selectedBrands.includes(brand)
       const ageMatch = selectedAges.length === 0 || selectedAges.includes(age)
       const priceMatch = price <= maxPrice
-
-      console.log(
-        `Brand match: ${brandMatch}, Age match: ${ageMatch}, Price match: ${priceMatch}`
-      )
 
       // Show/hide product based on matching filters
       if (brandMatch && ageMatch && priceMatch) {
@@ -131,6 +129,74 @@ document.addEventListener('DOMContentLoaded', function () {
         product.style.display = 'none'
         console.log('Product hidden')
       }
+
+      return brandMatch && ageMatch && priceMatch
+    })
+
+    // Handle pagination
+    paginate(filteredProducts)
+  }
+
+  function paginate(filteredProducts) {
+    const totalItems = filteredProducts.length
+    const totalPages = Math.ceil(totalItems / itemsPerPage)
+    paginationContainer.innerHTML = '' // Clear previous pagination buttons
+
+    // "Previous" button
+    if (currentPage > 1) {
+      const prevButton = document.createElement('button')
+      prevButton.textContent = '❮ Prev'
+      prevButton.classList.add('pagination-btn')
+      prevButton.addEventListener('click', () => {
+        currentPage--
+        displayPage(filteredProducts)
+        paginate(filteredProducts)
+      })
+      paginationContainer.appendChild(prevButton)
+    }
+
+    // Create pagination buttons
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement('button')
+      button.textContent = i
+      button.classList.add('pagination-btn')
+      if (i === currentPage) {
+        button.classList.add('active') // Highlight current page
+      }
+      button.addEventListener('click', () => {
+        currentPage = i
+        displayPage(filteredProducts)
+        paginate(filteredProducts)
+      })
+      paginationContainer.appendChild(button)
+    }
+
+    // "Next" button
+    if (currentPage < totalPages) {
+      const nextButton = document.createElement('button')
+      nextButton.textContent = 'Next ❯'
+      nextButton.classList.add('pagination-btn')
+      nextButton.addEventListener('click', () => {
+        currentPage++
+        displayPage(filteredProducts)
+        paginate(filteredProducts)
+      })
+      paginationContainer.appendChild(nextButton)
+    }
+    displayPage(filteredProducts)
+  }
+
+  function displayPage(filteredProducts) {
+    const start = (currentPage - 1) * itemsPerPage
+    const end = start + itemsPerPage
+    const pageItems = filteredProducts.slice(start, end)
+
+    // Hide all products first
+    products.forEach((product) => (product.style.display = 'none'))
+
+    // Show products for the current page
+    pageItems.forEach((product) => {
+      product.style.display = 'block'
     })
   }
 
@@ -145,6 +211,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Event listener for price range
   priceRange.addEventListener('input', function () {
     priceValue.textContent = priceRange.value
+    filterProducts()
+  })
+
+  itemsPerPageSelect.addEventListener('change', function () {
+    itemsPerPage = parseInt(this.value)
+    currentPage = 1
     filterProducts()
   })
 

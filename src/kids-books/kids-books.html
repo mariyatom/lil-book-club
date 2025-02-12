@@ -27,6 +27,17 @@
     <main>
       <aside class="filter">
         <h2>Filter</h2>
+        <!-- Sorting & Items Per Page -->
+        <div class="controls">
+          <div class="control-group">
+            <label for="itemsPerPage">Items/page:</label>
+            <select id="itemsPerPage">
+              <option value="2">2</option>
+              <option value="4" selected>4</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+        </div>
         <button id="clearAllFilters">Clear All</button>
         <h3>Brand</h3>
         <ul>
@@ -61,6 +72,7 @@
         <input type="range" min="4" max="112" step="1" id="priceRange" />
         <p>Price: $<span id="priceValue">4</span> - $112</p>
       </aside>
+
       <section class="products">
         <div
           class="product"
@@ -154,7 +166,7 @@
           </h3>
           <p>
             <span class="old-price">$23.99</span>
-            <span class="new-price">$19.99</span>
+            <span class="new-price">$21.99</span>
           </p>
           <button class="add-to-cart-btn">
             <span class="item-count">0</span>
@@ -185,6 +197,11 @@
         </div>
       </section>
     </main>
+    <!-- Pagination -->
+    <div id="pagination" class="pagination">
+      <!-- Pagination buttons will be dynamically generated here -->
+    </div>
+
     <script src="./kids-books.js"></script>
   </body>
 </html>
