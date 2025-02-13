@@ -45,6 +45,11 @@ function processPayment(cardNumber, expiryDate, cvv) {
 
     // Hide payment form and checkout button
     document.getElementById('paymentSection').style.display = 'none'
+
+    // Clear the cart from local storage after payment
+    localStorage.removeItem('cartCount')
+    localStorage.removeItem('cartData')
+    localStorage.removeItem('cartTotalPrice')
   }, 500)
 }
 
